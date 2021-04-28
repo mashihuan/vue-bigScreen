@@ -1,0 +1,109 @@
+// 图表四个角样式
+$cornerColor: #02a6b5;
+$cornerWidth: 1px;
+$cornerSize: .041667rem;
+
+.chart-wrapper {
+  position: relative;
+  margin-bottom: .052083rem;
+  border: 1px solid #19ba8b2b;
+  background: url('~@/assets/img/line_bg.png') no-repeat center center / 100% 100%;
+  z-index: 1;
+  overflow: hidden;
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    width: $cornerSize;
+    height: $cornerSize;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    border-top: $cornerWidth solid $cornerColor;
+    border-left: $cornerWidth solid $cornerColor;
+  }
+  &:after {
+    top: 0;
+    right: 0;
+    border-top: $cornerWidth solid $cornerColor;
+    border-right: $cornerWidth solid $cornerColor;
+  }
+
+  .chart-inner {
+    position: relative;
+    // height: 270px;
+    height: 1.40625rem;
+    padding: 0 .052083rem;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      width: $cornerSize;
+      height: $cornerSize;
+    }
+    &:before {
+      bottom: 0;
+      left: 0;
+      border-bottom: $cornerWidth solid $cornerColor;
+      border-left: $cornerWidth solid $cornerColor;
+    }
+    &:after {
+      bottom: 0;
+      right: 0;
+      border-bottom: $cornerWidth solid $cornerColor;
+      border-right: $cornerWidth solid $cornerColor;
+    }
+    .header {
+      padding: 5px 0;
+      opacity: 0.7;
+      .title {
+        // border: 1px solid #0f6a9e;
+        font-size: .072917rem;
+        font-weight: normal;
+        color: #4bee1a;
+      }
+    }
+
+    .count-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .count-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 31%;
+        padding: 4px 0;
+        border: 1px solid #0f6a9e;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+        .num {
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .chart {
+      // height: 220px;
+      height: 1.145833rem;
+    }
+  }
+}
+
+
+// 图表最小尺寸
+@media screen and(max-width: 1500px) {
+  .title {
+    font-size: 14px !important;
+  }
+}
+@media screen and(max-width: 992px) {
+  .chart-inner {
+    height: 270PX !important;
+    overflow-x: auto;
+  }
+  .chart {
+    height: 220PX !important;
+  }
+}
