@@ -1,7 +1,5 @@
 # 大屏
 
-![alt 预览图片](https://api.mashihuan.com/images/bigscreen.png)
-
 ## Project setup
 ```
 npm install

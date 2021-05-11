@@ -65,6 +65,12 @@ body {
   color: #ff0000;
 }
 
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @font-face {
   font-family: electronicFont;
   src: url(../font/DS-DIGIT.TTF);

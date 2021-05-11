@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: process.env.VUE_APP_BASE_API2,
   timeout: 60000,
   headers: {}
 })
@@ -16,14 +16,14 @@ instance.interceptors.request.use((config) => {
 })
 
 instance.interceptors.response.use((res) => {
-  if (res.data.returnCode !== 20000) {
+  if (res.data.return_code !== 20000) {
     Message.close()
     Message({
       message: res.data.return_msg || 'Error',
       type: 'error',
       duration: 3000
     })
-    if (res.data.returnCode === 50008 || res.data.returnCode === 50012 || res.data.returnCode === 50014) {
+    if (res.data.return_code === 50008 || res.data.return_code === 50012 || res.data.return_code === 50014) {
       location.reload()
     }
     return Promise.reject(new Error(res.message || 'Error'))

@@ -1,7 +1,7 @@
 <template>
   <div class="chart-wrapper">
     <div class="chart-inner">
-      <div id="domId" ref="domId" />
+      <div id="domId" ref="domId" v-loading="loading" element-loading-background="rgba(0, 0, 0, 0)" />
     </div>
   </div>
 </template>
@@ -10,13 +10,16 @@
 /* eslint-disable */
 import resize from '@/common/mixins/resize'
 import config from '@/common/mixins/config'
+import { AppKey, AppSecret } from '@/common/config'
 
 export default {
   mixins: [resize, config],
   data() {
     return {
+      loading: false,
+
       title: '',
-      viewToken: '24448941b05340968a92ae84a2a0812a',
+      viewToken: '148ea997586244fdbd28354b48b85744',
       viewer3D: '',
       app: '',
       viewAdded: false,
@@ -24,6 +27,7 @@ export default {
     }
   },
   mounted() {
+    this.loading = true
     const options = new BimfaceSDKLoaderConfig()
     options.viewToken = this.viewToken
     BimfaceSDKLoader.load(options, this.successCallback, this.failureCallback)
@@ -40,6 +44,7 @@ export default {
         // 创建WebApplication
         this.app = new Glodon.Bimface.Application.WebApplication3D(webAppConfig)
         // 添加待显示的模型
+        this.loading = false
         this.app.addView(this.viewToken)
         // 从WebApplication获取viewer3D对象
         this.viewer3D = this.app.getViewer()
@@ -57,6 +62,7 @@ export default {
     },
     // 加载失败回调
     failureCallback(error) {
+      this.$message.error(error.message)
       console.log(error)
     }
   }
@@ -66,7 +72,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/chart.scss';
 .chart-inner {
-  /* height: 690px; */
+  /* height: 693px; */
   height: 3.609375rem !important;
   padding: .052083rem !important;
   #domId {

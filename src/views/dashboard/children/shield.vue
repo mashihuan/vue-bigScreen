@@ -7,7 +7,7 @@
           <div class="num green"><span>20.7</span>%</div>
         </li>
         <li class="count-item">
-          <div class="desc">累计推进环数</div>
+          <div class="desc">累计推进</div>
           <div class="num red"><span>30</span>环</div>
         </li>
         <li class="count-item">

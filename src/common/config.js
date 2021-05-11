@@ -4,3 +4,6 @@ export const colors = [
   '#3BA8FC', '#FF4D4F', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'
 ]
 
+// bimface 配置
+export const AppKey = 'BgGAuW14v9kQeoOk0quSc8ICsXnqj3DN'
+export const AppSecret = 'bkVCr5F7ULzcqOmLIErQAeJrkFw0MwcK'

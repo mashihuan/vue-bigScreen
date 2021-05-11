@@ -43,7 +43,7 @@
 
 <script>
 import Personnel from './children/personnel' // 人员统计
-import Machine from './children/mechine' // 机械统计
+import Machine from './children/machine' // 机械统计
 import Equipment from './children/equipment' // 设备材料统计
 import Progress from './children/progress' // 进度统计
 import Quality from './children/quality' // 质量统计

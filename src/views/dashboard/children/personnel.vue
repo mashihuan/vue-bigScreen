@@ -7,12 +7,12 @@
           <div class="num green"><span>90</span>%</div>
         </li>
         <li class="count-item">
-          <div class="desc">人员在岗率</div>
-          <div class="num blue"><span>89</span>%</div>
+          <div class="desc">人员总数</div>
+          <div class="num blue">89</div>
         </li>
         <li class="count-item">
-          <div class="desc">人员在岗率</div>
-          <div class="num yellow"><span>89</span>%</div>
+          <div class="desc">周平均时长</div>
+          <div class="num yellow">89</div>
         </li>
       </ul>
     </template>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 import LineChart from '@/components/chart/line-chart'
 
 export default {

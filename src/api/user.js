@@ -1,7 +1,7 @@
-import request from '@/utils/request'
+import request2 from '@/utils/request2'
 
 export function login(data) {
-  return request({
+  return request2({
     url: '/systemservice/v1/sys/login',
     method: 'POST',
     data
@@ -9,7 +9,7 @@ export function login(data) {
 }
 
 export function userInfo(data) {
-  return request({
+  return request2({
     url: '/systemservice/v1/sys/getUserFromSessionToken',
     method: 'GET',
     params: data
@@ -17,7 +17,7 @@ export function userInfo(data) {
 }
 
 export function logout(data) {
-  return request({
+  return request2({
     url: '/systemservice/v1/sys/logout',
     method: 'POST',
     data
